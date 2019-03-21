@@ -21,13 +21,13 @@
 
 ## 术语
 
--	强制：编码时必须遵守的约定、原则
+- 强制：编码时必须遵守的约定、原则
 - 推荐：编码时必须考虑的约定，除非背离是适当的，否则不应当产生
 - 说明：对于强制或推荐规则的解释内容，如来源、原因、危害等
 - 正例：对于强制和推荐规则给出的正面的示例
 - 反例：对于强制和推荐规则给出的反面的示例
 
----
+---?size=0.5em
 
 ## 名词解释
 
@@ -181,7 +181,7 @@ public boolean isSuccess(){
 ```java
 package com.telchina.common.util;
 
-public final class DigestUtils{}
+public final class StringUtils{}
 ```
 
 ---
