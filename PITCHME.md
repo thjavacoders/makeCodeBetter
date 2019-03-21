@@ -31,7 +31,6 @@
 
 ## 名词解释
 
-@size[0.3em](
 - POJO: Plain Ordinary Java Object/ Plain Old Java Object
 - OOP: Object Oriented Programming
 - ORM: Object Relation Mapping
@@ -39,12 +38,16 @@
 - SOA: Service-Oriented Atrchitechture
 - IDE: Integrated Development Environment
 - OOM: java.lang.OutOfMemoryError
+
+---
+
+## 名词解释
 - 一方库: 本工程内部子项目模块依赖的库（jar包）
 - 二方库: 公司内部发布到中央仓库，可供公司内部其它应用依赖的库（jar包）
 - 三方库: 公司之外的开源库（jar包）
 - RPC: Remote Procedure Call
 - 方法签名：由方法名称和一个参数列表（方法的参数的顺序和类型）组成
-)
+
 ---
 
 ## 编程规约
@@ -262,7 +265,7 @@ enum DealStatusEnum{
 ### 命名规约 15 【参考】
 
 - Service/DAO 层方法命名规约
-  - 获取单个对象的方法用 get 做前缀。
+  - @size[0.1em](获取单个对象的方法用 get 做前缀。)
   - 获取多个对象的方法用 list 做前缀。
   - 获取统计值的方法用 count 做前缀。
   - 插入的方法用 save（推荐）或 insert 做前缀。
