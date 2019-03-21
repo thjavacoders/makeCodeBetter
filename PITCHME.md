@@ -27,10 +27,11 @@
 - 正例：对于强制和推荐规则给出的正面的示例
 - 反例：对于强制和推荐规则给出的反面的示例
 
----?size=0.5em
+---
 
 ## 名词解释
 
+@size[0.3em](
 - POJO: Plain Ordinary Java Object/ Plain Old Java Object
 - OOP: Object Oriented Programming
 - ORM: Object Relation Mapping
@@ -43,7 +44,7 @@
 - 三方库: 公司之外的开源库（jar包）
 - RPC: Remote Procedure Call
 - 方法签名：由方法名称和一个参数列表（方法的参数的顺序和类型）组成
-
+)
 ---
 
 ## 编程规约
