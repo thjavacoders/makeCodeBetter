@@ -460,7 +460,7 @@ method("a", "b", "c");
 
 - IDE 的 text file encoding 设置为 UTF-8; IDE 中文件的换行符使用 Unix 格式，不要使用 windows 格式。
 
-@quote(当你在 windows 的记事本里新建一个文件，输入"联通"两个字之后，保存，关闭，然后再次打开，你会发现这两个字已经消失了，代之的是几个乱码！呵呵，有人说这就是联通之所以拼不过移动的原因。)
+@quote[当你在 windows 的记事本里新建一个文件，输入"联通"两个字之后，保存，关闭，然后再次打开，你会发现这两个字已经消失了，代之的是几个乱码！呵呵，有人说这就是联通之所以拼不过移动的原因。]
 
 阅读参考 [unicode](https://zh.wikipedia.org/wiki/Unicode) [UTF-8](https://zh.wikipedia.org/wiki/UTF-8)
 
@@ -494,6 +494,7 @@ A.hello();
 // 反例
 new A().hello();
 ```
+---
 
 ### OOP 规约 2【强制】
 
@@ -789,8 +790,6 @@ String[] array3 = list.toArray(new String[0]);
 
 - 合理利用好集合的有序性(sort)和稳定性(order)，避免集合的无序性(unsort)和不稳定性(unorder)带来的负面影响
 
-> 稳定性指集合每次遍历的元素次序是一定的。有序性是指遍历的结果是按某种比较规则依次排列的。如：ArrayList 是 order/unsort；HashMap 是 unorder/unsort；TreeSet 是order/sort
-
 ![](https://pic002.cnblogs.com/images/2012/80896/2012053020261738.gif)
 
 ---
@@ -856,6 +855,8 @@ public class TimerTaskThread extends Thread {
 
 > 使用线程池的好处是减少在创建和销毁线程上所花的时间以及系统资源的开销，解决资源不足的问题。如果不使用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者“过度切换”的问题
 
+---
+
 ### 并发处理 4 【强制】
 
 - SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为static，必须加锁， _或者使用 DateUtils 工具类_
@@ -920,6 +921,8 @@ public void methodB(){
 
 - 多线程并行处理定时任务时，Timer 运行多个 TimeTask 时，只要其中之一没有捕获抛出的异常，其它任务便会自动终止运行，使用 ScheduledExecutorService 则没有这个问题
 
+---
+
 ### 并发处理 8 【推荐】
 
 - 避免 Random 实例被多线程使用，虽然共享该实例是线程安全的，但会因竞争同一seed 导致的性能下降
@@ -972,7 +975,11 @@ public void methodB(){
 
 ### 控制语句 2 【强制】
 
-- 在 if/else/for/while/do 语句中必须使用大括号，即使只有一行代码，避免使用下面的形式：`if (condition) statements;`
+- 在 if/else/for/while/do 语句中必须使用大括号，即使只有一行代码，避免使用下面的形式：
+
+```java
+if (condition) statements;
+```
 
 ---
 
@@ -1093,6 +1100,11 @@ public void methodB(){
 - 【强制】避免方法体过长，进行必要的方法抽取，保持代码逻辑清晰
 - 【强制】在使用正则表达式时，利用好其预编译功能，可以有效加快正则匹配速度
 - 【强制】注意 Math.random() 这个方法返回是 double 类型，注意取值的范围 0≤x<1（能够取到零值，注意除零异常），如果想获取整数类型的随机数，不要将 x 放大 10 的若干倍然后取整，直接使用 Random 对象的 nextInt 或者 nextLong 方法
+
+---
+
+### 其他
+
 - 【强制】获取当前毫秒数 System.currentTimeMillis(); 而不是 new Date().getTime();
 - 【推荐】不要在视图模板中加入任何复杂的逻辑
 - 【推荐】任何数据结构的构造或初始化，都应指定大小，避免数据结构无限增长吃光内存
