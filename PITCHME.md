@@ -1,4 +1,4 @@
-# 泰华Java编码规范V1.0学习贯彻
+# 泰华Java编码规范 V1.0
 
 ---
 
@@ -612,7 +612,7 @@ class B{
 
 ```java
 String str = "a,b,c,,";//预期为4
-String[] ary = str.split(","); //实际是3
+String[] arr = str.split(","); //实际是3
 ```
 
 ---
@@ -759,8 +759,6 @@ String[] array1 = (String[])list.toArray();
 // 正例
 String[] array2 = new String[list.size()];
 array2 = list.toArray(array2);
-// 常见，但不确定是否符合规范的
-String[] array3 = list.toArray(new String[0]);
 ```
 
 ---
@@ -777,12 +775,7 @@ String[] array3 = list.toArray(new String[0]);
 
 - 高度注意 Map 类集合 K/V 能不能存储 null 值的情况，如下表格：
 
-| 集合类 | Key | Value | Super | 并发 |
-| --- | --- | --- | --- | --- |
-| Hashtable | 不允许为null | 不允许为null | Dictionary | 线程安全 |
-| ConcurrentHashMap | 不允许为null | 不允许为null | AbstractMap | 分段锁 |
-| TreeMap | 不允许为null | 允许为null | AbstractMap | 线程不安全 |
-| HashMap | 允许为null | 允许为null | AbstractMap | 线程不安全 |
+![](pitchme/images/map.png)
 
 ---
 
@@ -805,7 +798,7 @@ String[] array3 = list.toArray(new String[0]);
 - 获取单例对象需要保证线程安全，其中的方法也要保证线程安全
 
 ```java
-private A aSingleton = null;
+private volatile A aSingleton = null;
 
 public A getASingleton(){
     if (aSingleton == null){
