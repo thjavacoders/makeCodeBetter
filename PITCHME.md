@@ -381,11 +381,17 @@ Long b = 2L;
 - 任何运算符左右必须加一个空格
 - 运算符包括赋值运算符=、逻辑运算符&&、加减乘除符号、三目运行符等
 
+
+```java
+// 反例
+int i=0;
+int j=i+++1;
+```
 ---
 
 ### 格式规约 5 【强制】
 
-- 缩进采用 4 个空格，禁止使用 tab 字符
+- 缩进采用 4 个空格，禁止使用 [tab](https://zh.wikipedia.org/wiki/%E8%A3%BD%E8%A1%A8%E9%8D%B5) 字符
 
 ---
 
@@ -838,6 +844,12 @@ public class TimerTaskThread extends Thread {
       // ...
    }
 }
+
+
+// use coodex-utilities
+
+ExecutorService executorService = ExecutorsHelper.newFixedThreadPool(5,"executorName");
+executorService.execute(runnable);
 ```
 
 ---
@@ -869,14 +881,15 @@ public class TimerTaskThread extends Thread {
 ```java
 public void a(){}  // 不加锁
 
-public synchronized void b(){} // 方法体锁
-
 public void c(){
   synchronized(lock){
     // 区块锁，推荐使用ReentrantLock
   }
   // 不需加锁的代码
 }
+
+public synchronized void b(){} // 方法体锁
+
 public void d(){
    synchronized(this){} // 对象琐
    synchronized(A.class){} //类锁
