@@ -957,7 +957,7 @@ public void methodB(){
 
 - volatile 解决多线程内存不可见问题。对于一写多读，是可以解决变量同步问题， 但是如果多写，同样无法解决线程安全问题。如果是 count++操作，使用如下类实现： `AtomicInteger count = new AtomicInteger(); count.addAndGet(1); `如果是 JDK8，推荐使用 LongAdder 对象，比 AtomicLong 性能更好（减少乐观锁的重试次数）。
 
-参考阅读 [CAS: compare and swap](https://zh.wikipedia.org/wiki/%E6%AF%94%E8%BE%83%E5%B9%B6%E4%BA%A4%E6%8D%A2)
+参考阅读 [CAS: compare and swap](https://zh.wikipedia.org/wiki/%E6%AF%94%E8%BE%83%E5%B9%B6%E4%BA%A4%E6%8D%A2) [原子性，有序性，可见性](https://www.jianshu.com/p/cf57726e77f2)
 
 ---
 
